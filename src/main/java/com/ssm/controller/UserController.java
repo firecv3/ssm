@@ -11,13 +11,13 @@ import com.ssm.service.IUserLoginService;
 public class UserController {
 	@Autowired
 	IUserLoginService LoginService;
-	@RequestMapping("/Login.action")
+	@RequestMapping("/Login")
 	public ModelAndView name(String userName,String userPwd ) {
 		ModelAndView modelAndView = new ModelAndView();
 		if (LoginService.Login(userName, userName)) {
 			modelAndView.setViewName("res");
 		}else {
-			modelAndView.setViewName("forward:/index.jsp");
+			modelAndView.setViewName("redirect:/index.jsp");
 		}
 		return modelAndView;
 	}
