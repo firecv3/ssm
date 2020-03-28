@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -16,6 +17,7 @@
 		<!-- log4j日志文件管理包版本 -->
 		<slf4j.version>1.7.30</slf4j.version>
 		<log4j.version>1.2.17</log4j.version>
+		<aspectj.version>1.8.9</aspectj.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -29,18 +31,18 @@
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
-			<version>1.8.9</version>
+			<version>${aspectj.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjtools -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjtools</artifactId>
-			<version>1.8.9</version>
+			<version>${aspectj.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>1.7.4</version>
+			<version>${aspectj.version}</version>
 		</dependency>
 		<!-- spring核心包 -->
 		<dependency>
@@ -116,13 +118,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
-			<version>1.1.21</version>
-		</dependency>
-		<!-- c3p0连接池jar -->
-		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.1.2</version>
+			<version>1.1.20</version>
 		</dependency>
 		<!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
 		<dependency>
@@ -184,6 +180,22 @@
 		</dependency>
 	</dependencies>
 	<build>
+	<resources>  
+           <resource>  
+               <directory>src/main/resources/</directory>  
+               <filtering>true</filtering>  
+               <includes>  
+                   <include>**/*.properties</include>  
+               </includes>  
+           </resource>  
+           <resource>  
+               <directory>src/main/resources/</directory>  
+               <filtering>false</filtering>  
+               <includes>  
+                   <include>**/*.xml</include>  
+               </includes>  
+           </resource>  
+       </resources>  
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
