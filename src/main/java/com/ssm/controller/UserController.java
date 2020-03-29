@@ -12,13 +12,21 @@ public class UserController {
 	@Autowired
 	IUserLoginService LoginService;
 	@RequestMapping("/Login")
-	public ModelAndView name(String userName,String userPwd ) {
+	public ModelAndView name(String userName,Integer userPwd ) {
 		ModelAndView modelAndView = new ModelAndView();
-		if (LoginService.Login(userName, userName)) {
+		if (LoginService.Login(userName, userPwd)) {
 			modelAndView.setViewName("res");
 		}else {
 			modelAndView.setViewName("redirect:/index.jsp");
 		}
 		return modelAndView;
 	}
+	
+	@RequestMapping("gotoSelect")
+	public ModelAndView GotoSelect() {
+		ModelAndView modelAndView = new ModelAndView();
+		
+		return modelAndView;
+	}
+
 }

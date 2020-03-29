@@ -9,7 +9,7 @@
 <body>
 <form action="${pageContext.request.contextPath}/Login">
 <input type="text" name="userName">
-<input type="password" name="userName">
+<input type="password" name="userPwd">
 <input type="submit">
 </form>
 </body>

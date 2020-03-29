@@ -8,5 +8,5 @@ import com.ssm.dto.UserInfo;
 
 public interface ILoginDao {
 	
-	public List<UserInfo> Login(@Param("userName") String userName ,@Param("userPwd")  String userPwd);
+	public List<UserInfo> Login(@Param("userName") String userName ,@Param("userPwd")  Integer userPwd);
 }

@@ -2,5 +2,5 @@ package com.ssm.service;
 
 
 public interface IUserLoginService {
-	public boolean Login(String userName,String userPwd) ;
+	public boolean Login(String userName,Integer userPwd) ;
 }

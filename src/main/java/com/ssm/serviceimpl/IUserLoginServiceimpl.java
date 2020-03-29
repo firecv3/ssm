@@ -14,7 +14,7 @@ public class IUserLoginServiceimpl implements IUserLoginService{
 	ILoginDao dao;
 	
 	@Override
-	public boolean Login(String userName, String userPwd) {
+	public boolean Login(String userName, Integer userPwd) {
 		// TODO Auto-generated method stub
 		boolean isLogin= false;
 		List<UserInfo> login = dao.Login(userName,userPwd);
