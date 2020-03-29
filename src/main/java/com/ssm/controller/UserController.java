@@ -19,7 +19,7 @@ public class UserController {
 	public ModelAndView name(String userName,Integer userPwd ) {
 		ModelAndView modelAndView = new ModelAndView();
 		if (LoginService.Login(userName, userPwd)) {
-			modelAndView.setViewName("res");
+			modelAndView.setViewName("forward:/gotoSelect");
 		}else {
 			modelAndView.setViewName("redirect:/index.jsp");
 		}
@@ -27,12 +27,12 @@ public class UserController {
 	}
 	@Autowired
 	ISelectEmpService selectEmp;
-	@RequestMapping("gotoSelect")
+	@RequestMapping("/gotoSelect")
 	public ModelAndView GotoSelect() {
 		ModelAndView modelAndView = new ModelAndView();
 		List<Emp> emps = selectEmp.SelectEmp();
-		modelAndView.addObject(emps);
-		modelAndView.setViewName("forward:/res.jsp");
+		modelAndView.addObject("list",emps);
+		modelAndView.setViewName("forward:/WEB-INF/jsp/res.jsp");
 		return modelAndView;
 	}
 
