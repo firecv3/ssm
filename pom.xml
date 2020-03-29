@@ -112,7 +112,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.46</version>
+			<version>8.0.19</version>
 		</dependency>
 		<!-- druid -->
 		<dependency>
@@ -182,14 +182,14 @@
 	<build>
 	<resources>  
            <resource>  
-               <directory>src/main/resources/</directory>  
-               <filtering>true</filtering>  
+               <directory>src/main/java/config</directory>  
+               <filtering>false</filtering>  
                <includes>  
                    <include>**/*.properties</include>  
                </includes>  
            </resource>  
            <resource>  
-               <directory>src/main/resources/</directory>  
+               <directory>src/main/java/config/</directory>  
                <filtering>false</filtering>  
                <includes>  
                    <include>**/*.xml</include>  
