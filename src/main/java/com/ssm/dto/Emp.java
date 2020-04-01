@@ -11,7 +11,6 @@ public class Emp {
 	private int deptno;
 	public Emp() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Emp(int empno, String ename, String job, int mgr, String hiredate, int sal, int comm, int deptno) {
 		super();

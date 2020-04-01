@@ -15,7 +15,6 @@ public class UserInfo {
 	private int deptId;
 	public UserInfo() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public UserInfo(int userId, String userName, String userPwd, int userIsJoinKq, int userType, int userEdu,
 			String userDate, String userMail, String userTel, String userInfo, int userIsOnlne, int deptId) {

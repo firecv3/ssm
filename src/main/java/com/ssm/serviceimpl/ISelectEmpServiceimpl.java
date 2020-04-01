@@ -14,7 +14,6 @@ public class ISelectEmpServiceimpl implements ISelectEmpService{
 	ISelectEmpDao dao;
 	@Override
 	public List<Emp> SelectEmp() {
-		// TODO Auto-generated method stub
 		return dao.SelectEmp();
 	}
 

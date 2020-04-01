@@ -25,6 +25,7 @@ List<Emp> list = (List<Emp>)request.getAttribute("list");
 		<th>薪水</th>
 		<th>奖金</th>
 		<th>部门编号</th>
+		<th>操作</th>
 	</tr>
 	<%for(Emp emp :list) { %>
 	<tr>
@@ -36,6 +37,7 @@ List<Emp> list = (List<Emp>)request.getAttribute("list");
 		<td><%=emp.getSal() %></td>
 		<td><%=emp.getComm() %></td>
 		<td><%=emp.getDeptno() %></td>
+		<td><a href="">修改</a><a href="">删除</a></td>
 	</tr>
 	<%} %>
 </table>
