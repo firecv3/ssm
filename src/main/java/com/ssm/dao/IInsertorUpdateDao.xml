@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.ssm.dao.IInsertorUpdateDao" >
+	<!-- id:方法名 
+		parameterType:定义参数类型
+		resultType:返回值类型.
+		
+		如果方法返回值是list,在resultType中写List的泛型,因为mybatis
+		对jdbc封装,一行一行读取数据
+	-->
+	<!--  <select id="getCount" resultType="int">
+		select count(1) from userinfo 
+	</select>-->
+	<!-- public void InsertDao(@Param("empno")  Integer empno,@Param("ename") String ename,@Param("job") String job,@Param("mgr")  Integer mgr,@Param("hiredate") String hiredate,
+			@Param("sal")  Integer sal,@Param("comm")  Integer comm,@Param("deptno")  Integer deptno); -->
+	<!--<select id="Login" resultType="UserInfo">
+		select * from userInfo where user_name = #{userName} and user_pwd = #{userPwd}
+	</select> -->
+	<insert id="InsertDao">
+	    INSERT INTO  emp(empno,ename,job,mgr,hiredate,sal,comm,deptno)VALUES 
+	    (
+	      #{empno},
+	      #{ename},
+	      #{job},
+	      #{mgr}
+	      #{hiredate}
+	      #{sal}
+	      #{comm}
+	      #{deptno}
+	    )
+	</insert>
+	<update id="UpdateDao">
+        update emp 
+            set empno = #{empno},
+                ename = #{ename},
+                job = #{job},
+                mgr = #{mgr},
+                hiredate = #{hiredate},
+                sal = #{sal},
+                comm=#{comm},
+                deptno =#{deptno} 
+            where empid = #{empid}
+    </update>
+</mapper>

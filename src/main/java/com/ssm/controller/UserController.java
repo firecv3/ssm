@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ssm.dto.Emp;
+import com.ssm.service.IInsertorUpdateService;
 import com.ssm.service.ISelectEmpService;
 import com.ssm.service.IUserLoginService;
 
@@ -34,6 +35,16 @@ public class UserController {
 		modelAndView.addObject("list",emps);
 		modelAndView.setViewName("forward:/WEB-INF/jsp/res.jsp");
 		return modelAndView;
+	}
+	@Autowired
+	IInsertorUpdateService IoUService;
+	//int empno,Strint ename,String job,int mgr,String hiredate,int sal,int comm,intdeptno
+	@RequestMapping("InsertorUpdete")
+	public String InsertorUpdete(int empid,int empno,String ename,String job,int mgr,String hiredate,int sal,int comm,int deptno) {
+		Emp e = new Emp(empid, empno, ename, job, mgr, hiredate, sal, comm, deptno);
+		IoUService.InsertorUpdate(e);
+		
+		return "forward:/gotoSelect";
 	}
 
 }
