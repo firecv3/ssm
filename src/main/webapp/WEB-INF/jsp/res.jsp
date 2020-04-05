@@ -17,6 +17,7 @@ List<Emp> list = (List<Emp>)request.getAttribute("list");
 
 <table border='1px'>
 	<tr>
+		<th></th>
 		<th>员工编号</th>
 		<th>员工姓名</th>
 		<th>员工职位</th>
@@ -29,6 +30,7 @@ List<Emp> list = (List<Emp>)request.getAttribute("list");
 	</tr>
 	<%for(Emp emp :list) { %>
 	<tr>
+		<td><%=emp.getEmpid() %></td>
 		<td><%=emp.getEmpno() %></td>
 		<td><%=emp.getEname() %></td>
 		<td><%=emp.getJob() %></td>
