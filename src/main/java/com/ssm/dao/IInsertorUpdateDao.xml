@@ -20,16 +20,7 @@
 	</select> -->
 	<insert id="InsertDao">
 	    INSERT INTO  emp(empno,ename,job,mgr,hiredate,sal,comm,deptno)VALUES 
-	    (
-	      #{empno},
-	      #{ename},
-	      #{job},
-	      #{mgr}
-	      #{hiredate}
-	      #{sal}
-	      #{comm}
-	      #{deptno}
-	    )
+	    (${empno},'${ename}','${job}',${mgr},'${hiredate}',${sal},${comm},${deptno})
 	</insert>
 	<update id="UpdateDao">
         update emp 

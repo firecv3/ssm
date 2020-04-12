@@ -15,8 +15,6 @@
 		<!-- mybatis版本号 -->
 		<mybatis.version>3.5.4</mybatis.version>
 		<!-- log4j日志文件管理包版本 -->
-		<slf4j.version>1.7.30</slf4j.version>
-		<log4j.version>1.2.17</log4j.version>
 		<aspectj.version>1.8.9</aspectj.version>
 	</properties>
 	<dependencies>
@@ -135,9 +133,20 @@
 		<!-- 日志文件管理包 -->
 		<!-- log start -->
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.10.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.10.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-web</artifactId>
+			<version>2.9.1</version>
 		</dependency>
 		<!-- 格式化对象，方便输出日志 -->
 		<dependency>
@@ -145,7 +154,7 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.1.41</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
@@ -154,7 +163,7 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${slf4j.version}</version>
-		</dependency>
+		</dependency> -->
 		<!-- log end -->
 		<!-- 映入JSON -->
 		<dependency>
@@ -180,22 +189,22 @@
 		</dependency>
 	</dependencies>
 	<build>
-	<resources>  
-           <resource>  
-               <directory>src/main/java/config</directory>  
-               <filtering>false</filtering>  
-               <includes>  
-                   <include>**/*.properties</include>  
-               </includes>  
-           </resource>  
-           <resource>  
-               <directory>src/main/java/config/</directory>  
-               <filtering>false</filtering>  
-               <includes>  
-                   <include>**/*.xml</include>  
-               </includes>  
-           </resource>  
-       </resources>  
+		<resources>
+			<resource>
+				<directory>src/main/java/config</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/java/config/</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
